@@ -4,19 +4,33 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="PC"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2021-11-24 03:33:14 "/>
+        <attribute name="saved" value="2021-12-03 05:47:10 "/>
         <attribute name="created" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTEtMjQ7IjAzOjI2OjU1ICI7MjQwOQ=="/>
-        <attribute name="edited" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTEtMjQ7IjAzOjMzOjE0ICI7MjsyNTEx"/>
+        <attribute name="edited" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTItMDM7IjA1OjQ3OjEwICI7MTM7MjU2Mg=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="nota1, nota2, nota3, nota4" type="Real" array="False" size=""/>
+            <declare name="nota1, nota2" type="Real" array="False" size=""/>
+            <output expression="&quot;NOTA 1&quot;" newline="True"/>
             <input variable="nota1"/>
+            <output expression="&quot;NOTA 2&quot;" newline="True"/>
             <input variable="nota2"/>
-            <input variable="nota3"/>
-            <input variable="nota4"/>
-            <assign variable="nota1" expression="nota1+nota2+nota3+nota4"/>
+            <assign variable="nota1" expression="nota1+nota2"/>
+            <output expression="&quot;NOTA 3&quot;" newline="True"/>
+            <input variable="nota2"/>
+            <assign variable="nota1" expression="nota1+nota2"/>
+            <output expression="&quot;NOTA 4&quot;" newline="True"/>
+            <input variable="nota2"/>
+            <assign variable="nota1" expression="(nota1+nota2)/4"/>
+            <if expression="nota1&gt;=5">
+                <then>
+                    <output expression="&quot;PASSOU DE ANO!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;N&#195;O PASSOU DE ANO!&quot;" newline="True"/>
+                </else>
+            </if>
             <output expression="nota1" newline="True"/>
         </body>
     </function>
