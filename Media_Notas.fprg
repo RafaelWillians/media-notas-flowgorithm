@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="PC"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2021-12-03 05:54:22 "/>
+        <attribute name="saved" value="2021-12-03 05:57:41 "/>
         <attribute name="created" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTEtMjQ7IjAzOjI2OjU1ICI7MjQwOQ=="/>
-        <attribute name="edited" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTItMDM7IjA1OjU0OjIyICI7Mjk7MjU3MA=="/>
+        <attribute name="edited" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTItMDM7IjA1OjU3OjQxICI7MzA7MjU2Ng=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -16,9 +16,7 @@
             <assign variable="nota1" expression="0"/>
             <assign variable="nota2" expression="0"/>
             <for variable="cont" start="1" end="4" direction="inc" step="1">
-                <output expression="&quot;Nota &quot;" newline="False"/>
-                <output expression="cont" newline="False"/>
-                <output expression="&quot;&quot;" newline="True"/>
+                <output expression="&quot;Nota &quot; &amp; cont" newline="True"/>
                 <input variable="nota1"/>
                 <if expression="nota1&lt;=10">
                     <then>
