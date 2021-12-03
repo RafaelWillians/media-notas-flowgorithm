@@ -4,26 +4,43 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="PC"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2021-12-03 05:47:10 "/>
+        <attribute name="saved" value="2021-12-03 05:54:22 "/>
         <attribute name="created" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTEtMjQ7IjAzOjI2OjU1ICI7MjQwOQ=="/>
-        <attribute name="edited" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTItMDM7IjA1OjQ3OjEwICI7MTM7MjU2Mg=="/>
+        <attribute name="edited" value="UEM7REVTS1RPUC03REVCVklJOzIwMjEtMTItMDM7IjA1OjU0OjIyICI7Mjk7MjU3MA=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
+            <declare name="cont" type="Integer" array="False" size=""/>
             <declare name="nota1, nota2" type="Real" array="False" size=""/>
-            <output expression="&quot;NOTA 1&quot;" newline="True"/>
-            <input variable="nota1"/>
-            <output expression="&quot;NOTA 2&quot;" newline="True"/>
-            <input variable="nota2"/>
-            <assign variable="nota1" expression="nota1+nota2"/>
-            <output expression="&quot;NOTA 3&quot;" newline="True"/>
-            <input variable="nota2"/>
-            <assign variable="nota1" expression="nota1+nota2"/>
-            <output expression="&quot;NOTA 4&quot;" newline="True"/>
-            <input variable="nota2"/>
-            <assign variable="nota1" expression="(nota1+nota2)/4"/>
-            <if expression="nota1&gt;=5">
+            <assign variable="nota1" expression="0"/>
+            <assign variable="nota2" expression="0"/>
+            <for variable="cont" start="1" end="4" direction="inc" step="1">
+                <output expression="&quot;Nota &quot;" newline="False"/>
+                <output expression="cont" newline="False"/>
+                <output expression="&quot;&quot;" newline="True"/>
+                <input variable="nota1"/>
+                <if expression="nota1&lt;=10">
+                    <then>
+                        <if expression="nota1&lt;0">
+                            <then>
+                                <assign variable="cont" expression="cont-1"/>
+                                <output expression="&quot;Nota n&#227;o pode ser menor que zero!&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <assign variable="nota2" expression="nota2+nota1"/>
+                                <output expression="&quot;Nota salva&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <assign variable="cont" expression="cont-1"/>
+                        <output expression="&quot;Nota maior que 10. Pode nhaum!&quot;" newline="True"/>
+                    </else>
+                </if>
+            </for>
+            <assign variable="nota2" expression="nota2/4"/>
+            <if expression="nota2&gt;=5">
                 <then>
                     <output expression="&quot;PASSOU DE ANO!&quot;" newline="True"/>
                 </then>
